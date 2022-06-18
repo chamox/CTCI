@@ -11,6 +11,8 @@ import string as string_lib
 # Implementation with dictionaries
 def is_unique(string: str) -> bool:
     
+    string = string.replace(" ","").lower()
+
     dictionary = dict()
 
     for char in string:
@@ -23,6 +25,8 @@ def is_unique(string: str) -> bool:
 
 # Implementation with no adsitional data structure
 def is_unique_v2(string: str) -> bool:
+
+    string = string.replace(" ","").lower()
 
     alphabet = string_lib.printable
 
