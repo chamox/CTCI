@@ -6,7 +6,9 @@
 # "abcdef" -> True
 # "aabxxd" -> False
 
+import string as string_lib
 
+# Implementation with dictionaries
 def is_unique(string: str) -> bool:
     
     dictionary = dict()
@@ -19,13 +21,38 @@ def is_unique(string: str) -> bool:
         
     return True
 
+# Implementation with no adsitional data structure
+def is_unique_v2(string: str) -> bool:
+
+    alphabet = string_lib.printable
+
+    for character in string:
+        if character in alphabet:
+            alphabet = alphabet.replace(character,"") # we need to reasign this variable.
+        else:
+            return False
+
+    return True
+
 if __name__ == "__main__":
+
+    functions = [
+                 is_unique,
+                 is_unique_v2
+                ]
     
     test_cases = [
                   ("abcdef", True),
                   ("aabxxd", False),
-                  ("",True)
+                  ("DEF",True)
                  ]
 
-    for text,result in test_cases:
-        print(is_unique(text) == result)
+    for function in functions:
+
+      
+        print("testing",function.__name__,":")
+
+        for text,result in test_cases:
+            print(function(text) == result)
+ 
+        print("\n")
