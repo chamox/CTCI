@@ -73,8 +73,6 @@ if __name__ == "__main__":
         print("testing",function.__name__,":")
 
         for text1, text2, expected in test_cases:
-            # print(text1, text2, expected)
-            # print()
 
             print(function(text1, text2) == expected)
             assert function(text1, text2) == expected
