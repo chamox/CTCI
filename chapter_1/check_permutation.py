@@ -70,11 +70,11 @@ if __name__ == "__main__":
     for function in functions:
 
     
-        print("testing",function.__name__,":")
+        print("\ntesting",function.__name__+":")
 
         for text1, text2, expected in test_cases:
-
-            print(function(text1, text2) == expected)
             assert function(text1, text2) == expected
 
-        print("\n")
+        print("All tests passed for",function.__name__+"")
+
+    print("\nAll tests passed\n")

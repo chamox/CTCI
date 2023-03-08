@@ -56,35 +56,3 @@ if __name__ == "__main__":
                 assert function(text1) == expected
 
             print("\n")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # i=0
-    # counter = 1
-    # compressed_string = ""
-    # while i < (len(string)-1):
-
-    #     if string[i] == string[i+1]:
-    #         counter +=1
-    #         i+=1
-    #     else:
-    #         compressed_string += string[i] + str(counter)
-    #         counter = 1
-    #         i+=1
-    # print(compressed_string)
