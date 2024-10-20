@@ -30,8 +30,7 @@ class Solution:
 
             current = current.next
 
-        return head
-    
+        return head 
     
     def delete_duplicates_v2(self, head):
         # We make a counter dict of the data at the nodes
@@ -63,7 +62,22 @@ class Solution:
         
         return dummy.next
 
+    def delete_duplicates_v3(self, head):
+        """
+        If we can not make a temporal buffer, we are going to use the 2 pointers technique
+        """
+        current = head
 
+        while current:
+            runner = current
+
+            while runner.next:
+                if runner.next.data == current.data:
+                    runner.next = runner.next.next
+                else:
+                    runner = runner.next
+            current =  current.next
+        return head
 
 
 if __name__ == "__main__":
@@ -83,7 +97,7 @@ if __name__ == "__main__":
 
 
     sol = Solution()
-    removed_items = sol.delete_duplicates_v2(linked_list)
+    removed_items = sol.delete_duplicates_v3(linked_list)
 
     print("****")
 
