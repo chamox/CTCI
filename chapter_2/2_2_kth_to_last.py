@@ -10,14 +10,19 @@ class Solution:
         slow = head
         fast = head
 
-        for i in range(k):
+        for _ in range(k):
+            if fast is None:
+                return None
             fast = fast.next
         
         while fast:
             slow = slow.next
             fast = fast.next
 
-        return slow.data
+        if slow is not None:
+            return slow.data
+        else:
+            return None
     
 if __name__ == "__main__":
     head = Node(1)
@@ -26,10 +31,9 @@ if __name__ == "__main__":
     head.next.next.next = Node(4)
     head.next.next.next.next = Node(5)
 
-    # Crear una instancia de Solution
     solution = Solution()
 
-    # Encontrar el 2° nodo desde el final
+    # Find k° node from final
     k = 3
     result = solution.find_kth_to_last(head, k)
 
