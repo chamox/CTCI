@@ -17,9 +17,6 @@ def palindrome_permutation(string: str) -> bool:
             chars_counter[c] += 1
         else:
             chars_counter[c] = 1
-    
-    # if len(chars_counter) == 1:
-    #     return True
 
     odds = 0
 
