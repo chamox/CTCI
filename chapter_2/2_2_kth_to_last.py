@@ -1,4 +1,5 @@
 # Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list.
+# https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 
 class Node:
     def __init__(self, data=None):
