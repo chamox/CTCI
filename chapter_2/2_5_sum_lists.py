@@ -31,7 +31,29 @@ class Solution:
 
         return result.next
 
-                
+    def reverse_list(self, node):
+        prev = None
+        current = node
+
+        while current:
+            tmp = current.next
+            current.next = prev
+            prev = current
+            current = tmp
+        
+        return prev
+    
+    def sum_lists_forward(self, l1, l2):
+        """
+            In case the list given is in forward order
+        """
+
+        l1 = self.reverse_list(l1)
+        l2 = self.reverse_list(l2)
+
+        result = self.sum_lists(l1, l2)
+
+        return self.reverse_list(result)
 
 
 if __name__ == "__main__":
